@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "RequiredSetup";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Required Setup</h2>
+<p>Now that you have successfully deployed the Challange App, you must connect it to your Azure AD B2C tenant.</p>
+<p>For that, you need to add the following application settings to your web app.</p>
+<p>You can learn more about configuring application settings in Azure Portal <a href="https://docs.microsoft.com/en-us/azure/app-service/configure-common#configure-app-settings">here</a></p>
+<table class="table-hover table-condensed table-striped">
+    <tr>
+        <th>Application Setting Name</th>
+        <th>Application Setting Value</th>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.Tenant</td>
+        <td>the name of your B2C tenant without .onmicrosoft.com (e.g. mysupertenant)</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.SignUpSignInPolicyId</td>
+        <td>the id of your sign-up of sign-in policy - built-in or custom (e.g. b2c_1_susi)</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.ResetPasswordPolicyId</td>
+        <td>the id of your reset password policy - built-in or custom</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.EditProfilePolicyId</td>
+        <td>the id of your edit profile policy - built-in or custom</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.RedirectUri</td>
+        <td>Where should we redirect (e.g. @Context.Request.PathBase/signin-oidc)</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.ClientId</td>
+        <td>the client_id of your registered application in your B2C tenant</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.ClientSecret</td>
+        <td>the client secret of your registered application in your B2C tenant</td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.ApiUrl</td>
+        <td>external API URI protected by the same B2C tenant (e.g. https://fabrikamb2chello.azurewebsites.net/hello) </td>
+    </tr>
+    <tr>
+        <td>Authentication.AzureAdB2C.ApiScopes</td>
+        <td>external API scopes protected by the same B2C tenant (e.g. https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read) </td>
+    </tr>
+</table>

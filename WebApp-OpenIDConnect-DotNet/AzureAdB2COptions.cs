@@ -11,7 +11,7 @@ namespace WebApp_OpenIDConnect_DotNet
 
         public AzureAdB2COptions()
         {
-            AzureAdB2CInstance = "https://fabrikamb2c.b2clogin.com/tfp";
+            AzureAdB2CInstance = $"https://{Tenant}.b2clogin.com/tfp";
         }
 
         public string ClientId { get; set; }
@@ -25,7 +25,7 @@ namespace WebApp_OpenIDConnect_DotNet
         public string RedirectUri { get; set; }
 
         public string DefaultPolicy => SignUpSignInPolicyId;
-        public string Authority => $"{AzureAdB2CInstance}/{Tenant}/{DefaultPolicy}/v2.0";
+        public string Authority => $"{AzureAdB2CInstance}/{Tenant}.onmicrosoft.com/{DefaultPolicy}/v2.0";
 
         public string ClientSecret { get; set; }
         public string ApiUrl { get; set; }
