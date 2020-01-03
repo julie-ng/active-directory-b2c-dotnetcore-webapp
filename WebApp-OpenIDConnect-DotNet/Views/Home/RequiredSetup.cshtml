@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "RequiredSetup";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    AzureAdB2COptions B2COptions = ViewData["AzureAdB2COptions"] as AzureAdB2COptions;
 }
 
 <h2>Required Setup</h2>
@@ -11,42 +12,52 @@
 <table class="table-hover table-condensed table-striped">
     <tr>
         <th>Application Setting Name</th>
-        <th>Application Setting Value</th>
+        <th>Current Value</th>
+        <th>Description</th>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:Tenant</td>
+        <td>@B2COptions.Tenant</td>
         <td>the name of your B2C tenant without .onmicrosoft.com (e.g. mysupertenant)</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:SignUpSignInPolicyId</td>
+        <td>@B2COptions.SignUpSignInPolicyId</td>
         <td>the id of your sign-up of sign-in policy - built-in or custom (e.g. b2c_1_susi)</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ResetPasswordPolicyId</td>
+        <td>@B2COptions.ResetPasswordPolicyId</td>
         <td>the id of your reset password policy - built-in or custom</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:EditProfilePolicyId</td>
+        <td>@B2COptions.EditProfilePolicyId</td>
         <td>the id of your edit profile policy - built-in or custom</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:RedirectUri</td>
+        <td>@B2COptions.RedirectUri</td>
         <td>Where should we redirect (e.g. @Context.Request.Scheme://@Context.Request.Host/signin-oidc)</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ClientId</td>
+        <td>@B2COptions.ClientId</td>
         <td>the client_id of your registered application in your B2C tenant</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ClientSecret</td>
+        <td>@B2COptions.ClientSecret</td>
         <td>the client secret of your registered application in your B2C tenant</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ApiUrl</td>
+        <td>@B2COptions.ApiUrl</td>
         <td>external API URI protected by the same B2C tenant (e.g. https://fabrikamb2chello.azurewebsites.net/hello) </td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ApiScopes</td>
+        <td>@B2COptions.ApiScopes</td>
         <td>external API scopes protected by the same B2C tenant (e.g. https://fabrikamb2c.onmicrosoft.com/helloapi/demo.read) </td>
     </tr>
 </table>

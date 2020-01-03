@@ -29,6 +29,7 @@ namespace WebApp_OpenIDConnect_DotNet.Controllers
         }
         public IActionResult RequiredSetup()
         {
+            ViewData["AzureAdB2COptions"] = AzureAdB2COptions;
             return View();
         }
 
