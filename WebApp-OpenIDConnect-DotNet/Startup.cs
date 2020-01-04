@@ -38,6 +38,12 @@ namespace WebApp_OpenIDConnect_DotNet
             .AddAzureAdB2C(options => Configuration.Bind("Authentication:AzureAdB2C", options))
             .AddCookie();
 
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("B2C-Challenge-Admin", policy =>
+                                policy.RequireClaim("custom-admin", "anton", "christer", "jpda"));
+            });
+
             // Add framework services.
             services.AddMvc();
             
