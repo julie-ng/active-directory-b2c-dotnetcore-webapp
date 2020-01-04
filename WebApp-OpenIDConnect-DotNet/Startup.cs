@@ -41,7 +41,7 @@ namespace WebApp_OpenIDConnect_DotNet
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("B2C-Challenge-Admin", policy =>
-                                policy.RequireClaim("CustomAdmin", "anton", "christer", "jpda"));
+                                policy.RequireClaim("extension_CustomAdmin", "anton", "christer", "jpda"));
             });
 
             // Add framework services.
