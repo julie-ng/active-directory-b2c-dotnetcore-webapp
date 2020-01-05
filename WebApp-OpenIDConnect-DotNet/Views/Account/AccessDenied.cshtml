@@ -1,9 +1,34 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "AccessDenied";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>Not quite there yet!</h2>
-<h2>Your request could not be authorized!</h2>
+<h3>Your request could not be authorized!</h3>
 
+<hr />
+<h2>Challenge "Custom Admin"</h2>
+<p>To complete challenge "Custom Admin" you have to present a custom attribute (claim) with name <strong>extension_CustomAdmin</strong></p>
+<p>
+    And value one of the:
+    <ul>
+        <li>Anton</li>
+        <li>Christer</li>
+        <li>John</li>
+    </ul>
+</p>
+<p>You have to complete this challenge using built-in policy.</p>
+<p>End users must not be able to write the value of that attribute.</p>
+<p>You might need to use Graph API to populate attribute value.</p>
+
+<hr />
+<h2>Challenge "REST Admin"</h2>
+<p>To complete challenge "REST Admin" you have to present a claim obtained from REST service.</p>
+<p>The name of the claim must be <strong>RestAdmin</strong>. The value will be returned from the REST service</p>
+<p>Use the following REST endpoint in your custom (IEF) policy:
+    <ul>
+        <li>https://b2c-preday-rest.azurewebsites.net/api/RestAction?code=cDvT2ioatDtetOjDvU//uBzvD8IR363y3lyDJIWriKw840rWnaPQMg==</li>
+    </ul>
+</p>
+<p>This service is protected by TLS mutual authentication. Contact your proctor to obtain the client certificate needed for authentication to the service.</p>
+<p>The service expects an <strong>email</strong> input parameter and returns <strong>RestAdmin</strong> claim with required value to unlock your challenge.</p>

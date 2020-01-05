@@ -10,5 +10,11 @@ namespace WebApp_OpenIDConnect_DotNet.Controllers
         {
             return View();
         }
+
+        [Authorize(Policy = "B2C-Challenge-Rest")]
+        public IActionResult RestAdmin()
+        {
+            return View();
+        }
     }
 }
