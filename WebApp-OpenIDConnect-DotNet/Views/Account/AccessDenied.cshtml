@@ -7,28 +7,53 @@
 <h3>Your request could not be authorized!</h3>
 
 <hr />
-<h2>Challenge "Custom Admin"</h2>
-<p>To complete challenge "Custom Admin" you have to present a custom attribute (claim) with name <strong>extension_CustomAdmin</strong></p>
-<p>
-    And value one of the:
-    <ul>
-        <li>Anton</li>
-        <li>Christer</li>
-        <li>John</li>
-    </ul>
-</p>
-<p>You have to complete this challenge using built-in policy.</p>
-<p>End users must not be able to write the value of that attribute.</p>
-<p>You might need to use Graph API to populate attribute value.</p>
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Challenge "Custom Admin"</h4>
+    <p>To complete challenge "Custom Admin" you have to present a custom attribute (claim) with name <strong>extension_CustomAdmin</strong></p>
+    <p>
+        And value one of the:
+        <ul>
+            <li>Anton</li>
+            <li>Christer</li>
+            <li>John</li>
+        </ul>
+    </p>
+    <p>You have to complete this challenge using built-in policy.</p>
+    <p>End users must not be able to write the value of that attribute.</p>
+    <p>You might need to use Graph API to populate attribute value.</p>
+</div>
 
 <hr />
-<h2>Challenge "REST Admin"</h2>
-<p>To complete challenge "REST Admin" you have to present a claim obtained from REST service.</p>
-<p>The name of the claim must be <strong>RestAdmin</strong>. The value will be returned from the REST service</p>
-<p>Use the following REST endpoint in your custom (IEF) policy:
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Challenge "REST Admin"</h4>
+    <p>To complete challenge "REST Admin" you have to present a claim obtained from REST service.</p>
+    <p>The name of the claim must be <strong>RestAdmin</strong>. The value will be returned from the REST service</p>
+    <p>
+        Use the following REST endpoint in your custom (IEF) policy:
+        <ul>
+            <li>https://b2c-preday-rest.azurewebsites.net/api/RestAction?code=cDvT2ioatDtetOjDvU//uBzvD8IR363y3lyDJIWriKw840rWnaPQMg==</li>
+        </ul>
+    </p>
+    <p>This service is protected by TLS mutual authentication. Contact your proctor to obtain the client certificate needed for authentication to the service.</p>
+    <p>The service expects an <strong>email</strong> input parameter and returns <strong>RestAdmin</strong> claim with required value to unlock your challenge.</p>
+</div>
+
+<hr />
+<div class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">(Optional) Challenge Advanced Custom Policy (1)</h4>
+    <p>To complete this optional challenge you have to extend your custom policy to include the custom attributes already configured in Challenge "Admin"</p>
+</div>
+
+<div class="alert alert-secondary" role="alert">
+    <h4 class="alert-heading">Stretch Challenge - Web API</h4>
+    <p>For this challenge you will need to:</p>
     <ul>
-        <li>https://b2c-preday-rest.azurewebsites.net/api/RestAction?code=cDvT2ioatDtetOjDvU//uBzvD8IR363y3lyDJIWriKw840rWnaPQMg==</li>
+        <li>Deploy an Web API</li>
+        <li>Protect that Web API using your B2C Tenant</li>
+        <li>Grant access to the Web API for your current Web Application</li>
+        <li>Configure your current Web Application with the API's scopes and URL</li>
     </ul>
-</p>
-<p>This service is protected by TLS mutual authentication. Contact your proctor to obtain the client certificate needed for authentication to the service.</p>
-<p>The service expects an <strong>email</strong> input parameter and returns <strong>RestAdmin</strong> claim with required value to unlock your challenge.</p>
+    <hr>
+    <p class="mb-0">More information is located under <a asp-area="" asp-controller="Home" asp-action="Api">API</a></p>
+</div>

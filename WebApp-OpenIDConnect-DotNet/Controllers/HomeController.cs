@@ -73,7 +73,7 @@ namespace WebApp_OpenIDConnect_DotNet.Controllers
                 switch (response.StatusCode)
                 {
                     case HttpStatusCode.OK:
-                        responseString = await response.Content.ReadAsStringAsync();
+                        responseString = (await response.Content.ReadAsStringAsync()).Replace(",",", <br />");
                         break;
                     case HttpStatusCode.Unauthorized:
                         responseString = $"Please sign in again. {response.ReasonPhrase}";
