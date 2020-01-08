@@ -3,10 +3,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Not quite there yet!</h2>
-<h3>Your request could not be authorized!</h3>
 
-<hr />
+<h2></h2>
+<h3></h3>
+
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Not quite there yet!</h4>
+    <p>Your request could not be authorized!</p>
+    <p>Check out the challenges descriptions bellow to understand more.</p>
+    <p>You can also talk to your proctor about any challenge.</p>
+</div>
+
 <div class="alert alert-info" role="alert">
     <h4 class="alert-heading">Challenge "Custom Admin"</h4>
     <p>To complete challenge "Custom Admin" you have to present a custom attribute (claim) with name <strong>extension_CustomAdmin</strong></p>
@@ -23,8 +30,6 @@
     <p>You might need to use Graph API to populate attribute value.</p>
 </div>
 
-<hr />
-
 <div class="alert alert-info" role="alert">
     <h4 class="alert-heading">Challenge "REST Admin"</h4>
     <p>To complete challenge "REST Admin" you have to present a claim obtained from REST service.</p>
@@ -39,7 +44,6 @@
     <p>The service expects an <strong>email</strong> input parameter and returns <strong>RestAdmin</strong> claim with required value to unlock your challenge.</p>
 </div>
 
-<hr />
 <div class="alert alert-warning" role="alert">
     <h4 class="alert-heading">(Optional) Challenge Advanced Custom Policy (1)</h4>
     <p>To complete this optional challenge you have to extend your custom policy to include the custom attributes already configured in Challenge "Admin"</p>
