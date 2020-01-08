@@ -59,7 +59,7 @@ namespace WebApp_OpenIDConnect_DotNet.Controllers
                 new MSALStaticCache(signedInUserID, this.HttpContext).EnablePersistence(cca.UserTokenCache);
 
                 var accounts = await cca.GetAccountsAsync();
-                AuthenticationResult result = await cca.AcquireTokenSilent(scope, accounts.FirstOrDefault())
+                AuthenticationResult result = await cca.AcquireTokenSilent(scope, User.Claims.FirstOrDefault(c => c.Type.ToLower().Equals("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress")).Value)
                     .ExecuteAsync();
 
                 HttpClient client = new HttpClient();
