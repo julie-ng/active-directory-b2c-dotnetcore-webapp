@@ -77,11 +77,11 @@
             "appSettings": [
               {
                 "name": "Authentication:AzureAdB2C:Tenant",
-                "value": "snetga"
+                "value": "_"
               },
               {
                 "name": "Authentication:AzureAdB2C:ClientId",
-                "value": "11111111-2222-3333-4444-0123456789ab"
+                "value": "00000000-0000-0000-0000-000000000000"
               },
               {
                 "name": "Authentication:AzureAdB2C:ClientSecret",

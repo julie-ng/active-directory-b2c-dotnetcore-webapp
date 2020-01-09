@@ -5,6 +5,12 @@
     AzureAdB2COptions B2COptions = ViewData["AzureAdB2COptions"] as AzureAdB2COptions;
 }
 
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Azure AD B2C Tenant required</h4>
+        <p>You are required to create your own Azure AD B2C tenant and proceed with it.</p>
+        <p>You may also use your existing Azure AD B2C Tenant if you have one.</p>
+    </div>
+
 <div class="alert alert-info" role="alert">
     <h4 class="alert-heading">Required Setup</h4>
     <p>Now that you have successfully deployed the Challange App, you must connect it to your Azure AD B2C tenant.</p>
@@ -21,37 +27,37 @@
     <tr>
         <td>Authentication:AzureAdB2C:Tenant</td>
         <td>@B2COptions.Tenant</td>
-        <td>the name of your B2C tenant without .onmicrosoft.com (e.g. mysupertenant)</td>
+        <td>the name of <strong>your</strong> B2C tenant without .onmicrosoft.com (e.g. mysupertenant)</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:SignUpSignInPolicyId</td>
         <td>@B2COptions.SignUpSignInPolicyId</td>
-        <td>the id of your sign-up of sign-in policy - built-in or custom (e.g. b2c_1_susi)</td>
+        <td>the id of <strong>your</strong> sign-up of sign-in policy - built-in or custom (e.g. b2c_1_susi)</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ResetPasswordPolicyId</td>
         <td>@B2COptions.ResetPasswordPolicyId</td>
-        <td>the id of your reset password policy - built-in or custom</td>
+        <td>the id of <strong>your</strong> reset password policy - built-in or custom</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:EditProfilePolicyId</td>
         <td>@B2COptions.EditProfilePolicyId</td>
-        <td>the id of your edit profile policy - built-in or custom</td>
+        <td>the id of <strong>your</strong> edit profile policy - built-in or custom</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:RedirectUri</td>
         <td>@B2COptions.RedirectUri</td>
-        <td>Where should we redirect (e.g. @Context.Request.Scheme://@Context.Request.Host/signin-oidc)</td>
+        <td>Where should we redirect (e.g. @Context.Request.Scheme://@Context.Request.Host/signin-oidc) after successful login. This is the web url of the current web site.</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ClientId</td>
         <td>@B2COptions.ClientId</td>
-        <td>the client_id of your registered application in your B2C tenant</td>
+        <td>the client_id of <strong>your</strong> registered application in <strong>your</strong> B2C tenant</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ClientSecret</td>
         <td>[*****] (not displayed for security reasons)</td>
-        <td>the client secret of your registered application in your B2C tenant</td>
+        <td>the client secret of <strong>your</strong> registered application in <strong>your</strong> B2C tenant</td>
     </tr>
     <tr>
         <td>Authentication:AzureAdB2C:ApiUrl</td>
