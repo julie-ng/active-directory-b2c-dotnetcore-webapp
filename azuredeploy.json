@@ -77,39 +77,39 @@
             "appSettings": [
               {
                 "name": "Authentication:AzureAdB2C:Tenant",
-                "value": "_"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:ClientId",
-                "value": "00000000-0000-0000-0000-000000000000"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:ClientSecret",
-                "value": "*** - replace with your real client secret"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:SignUpSignInPolicyId",
-                "value": "b2c_1_empty"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:ResetPasswordPolicyId",
-                "value": "b2c_1_empty"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:EditProfilePolicyId",
-                "value": "b2c_1_empty"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:RedirectUri",
-                "value": "fill in your azure websites URL + /signin-oidc"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:ApiUrl",
-                "value": "This is required for the stretch challenge"
+                "value": ""
               },
               {
                 "name": "Authentication:AzureAdB2C:ApiScopes",
-                "value": "again for the stretch challenge"
+                "value": ""
               }
             ]
           }
