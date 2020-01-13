@@ -1,0 +1,29 @@
+﻿@using System.Security.Claims
+@{
+    ViewData["Title"] = "Super Admin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Congratulations!</h4>
+    <p>Congratulations, you have successfully completed challenge "Super Admin".</p>
+    <p>Because theare are various ways to accomplish this challenge, pleaese share your approach with your fellows on the table</p>
+</div>
+
+<p>Here are the current claims for reference</p>
+<table class="table-hover table-condensed table-striped">
+    <tr>
+        <th>Claim Type</th>
+        <th>Claim Value</th>
+    </tr>
+
+    @foreach (Claim claim in User.Claims)
+    {
+        <tr>
+            <td>@claim.Type</td>
+            <td>@claim.Value</td>
+        </tr>
+    }
+</table>
+
+
