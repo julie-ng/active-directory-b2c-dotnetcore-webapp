@@ -81,7 +81,7 @@
               },
               {
                 "name": "Authentication:AzureAdB2C:ClientId",
-                "value": ""
+                "value": "0"
               },
               {
                 "name": "Authentication:AzureAdB2C:ClientSecret",
