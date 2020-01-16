@@ -1,13 +1,13 @@
 ﻿@{
     ViewData["Title"] = "About";
-    
+
 }
-<h2>@ViewData["Title"].</h2>
+<h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 @using System.Security.Claims
 
-<table class="table-hover table-condensed table-striped">
+<table class="table table-striped">
     <tr>
         <th>Claim Type</th>
         <th>Claim Value</th>
@@ -17,7 +17,7 @@
     {
         <tr>
             <td>@claim.Type</td>
-            <td>@claim.Value</td>
+            <td><code>@claim.Value</code></td>
         </tr>
     }
 </table>
