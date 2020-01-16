@@ -36,7 +36,7 @@ namespace WebApp_OpenIDConnect_DotNet
                 var queueService = new QueueServiceClient(path);
                 // if we include the queue name here and in the sas, we get a double path
                 var queueClient = queueService.GetQueueClient(string.Empty); 
-                return new StorageQueueProgressNotificationService(queueClient);
+                return new StorageQueueProgressNotificationService(queueClient, tenantId);
             });
         }
     }

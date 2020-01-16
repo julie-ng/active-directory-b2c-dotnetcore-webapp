@@ -9,10 +9,12 @@ namespace WebApp_OpenIDConnect_DotNet.Models
 {
     public interface IProgressNotificationService
     {
-        void Notify(string tid, string cid, IEnumerable<string> satisfiedAuthorizationPolicyNames);
-        void Notify(NotificationMessage message);
         void Notify(IEnumerable<IAuthorizationRequirement> satisfiedRequirements);
+        void Notify(NotificationMessage message);
     }
 
-    
+    public interface IProgressNotificationService<T> : IProgressNotificationService
+    {
+        void Notify(IEnumerable<T> satisfiedRequirements);
+    }
 }
