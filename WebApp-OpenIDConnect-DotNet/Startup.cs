@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using WebApp_OpenIDConnect_DotNet.Models;
 
 namespace WebApp_OpenIDConnect_DotNet
 {
@@ -52,7 +54,7 @@ namespace WebApp_OpenIDConnect_DotNet
 
             // Add framework services.
             services.AddMvc();
-            
+
             // Adds a default in-memory implementation of IDistributedCache.
             services.AddDistributedMemoryCache();
             services.AddSession(options =>
@@ -62,7 +64,8 @@ namespace WebApp_OpenIDConnect_DotNet
                 options.Cookie.IsEssential = true;
             });
 
-            
+            services.AddStorageQueueNotificationServices(Configuration["Notifier:QueueSas"], Configuration["Authentication:AzureAdB2C:Tenant"]);
+            services.AddScoped<NotifyChallengeAttribute>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,10 +75,13 @@ namespace WebApp_OpenIDConnect_DotNet
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseBrowserLink();
+                Microsoft.IdentityModel.Logging.IdentityModelEventSource.ShowPII = true;
             }
             else
             {
@@ -83,7 +89,7 @@ namespace WebApp_OpenIDConnect_DotNet
             }
 
             app.UseStaticFiles();
-            
+
             app.UseSession();
 
             app.UseAuthentication();
